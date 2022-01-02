@@ -62,20 +62,3 @@ def get_tweet_by_favorite(get_num=1000):
         print(i, status.created_at)
         i += 1
     return out
-
-
-if __name__ == "__main__":
-    api = tweepy.API(auth_set())
-    i=0
-    out = [["name", "text", "id"]]
-    #for status in limit_handled(tweepy.Cursor(api.get_favorites).items()):
-    for status in limit_handled(tweepy.Cursor(api.search_tweets, q="#sarinatalk").items()):
-        t = fix_text(status.text)
-        out.append([status.user.screen_name, t,status.id_str])
-        print(i, status.created_at)
-        i += 1
-
-    with open("./result/sarinatalk.csv", mode="w", encoding="utf_8", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerows(out)
-
