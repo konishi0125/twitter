@@ -46,7 +46,7 @@ def get_tweet_by_search(search_key, get_num=1000):
     out=[]
     for status in limit_handled(tweepy.Cursor(api.search_tweets, q=search_key).items(get_num)):
         t = fix_text(status.text)
-        out.append([status.user.screen_name, t, status.id_str, ])
+        out.append([status.user.screen_name, t, status.id_str])
         print(i, status.created_at)
         i += 1
     return out
@@ -58,7 +58,7 @@ def get_tweet_by_favorite(get_num=1000):
     out=[]
     for status in limit_handled(tweepy.Cursor(api.get_favorites).items(get_num)):
         t = fix_text(status.text)
-        out.append([status.user.screen_name, t, status.id_str, ])
+        out.append([status.user.screen_name, t, status.id_str])
         print(i, status.created_at)
         i += 1
     return out
