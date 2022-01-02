@@ -1,4 +1,6 @@
 config.py
+get_sarinatalk.py
+get_talk.py
 venv/
 result/
 data/
