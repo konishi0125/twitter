@@ -1,7 +1,6 @@
 import config
 import tweepy
 import time
-import csv
 import neologdn
 import re
 
