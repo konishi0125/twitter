@@ -32,7 +32,6 @@ for index, sr in data.iterrows():
         elif sr["favorite"] is False:
             nega += 1
     elif result["orientation"] == "NEUTRAL":
-        print(result)
         if sr["favorite"] is True:
             favo_neutral += 1
         elif sr["favorite"] is False:
